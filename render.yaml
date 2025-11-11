@@ -3,14 +3,11 @@ services:
     name: ecommerce-backend
     env: node
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    rootDir: backend
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
       - key: FRONTEND_ORIGIN
         value: https://miba-ecommerce.vercel.app
 
