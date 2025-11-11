@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ecommerce-backend
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_ORIGIN
+        value: https://your-frontend.vercel.app
+
+
