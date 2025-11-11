@@ -2,15 +2,16 @@ services:
   - type: web
     name: ecommerce-backend
     env: node
-    rootDir: backend
     plan: free
     buildCommand: npm install
-    startCommand: node server.js
-    autoDeploy: true
+    startCommand: npm start
+    rootDir: backend
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 10000
       - key: FRONTEND_ORIGIN
-        value: https://your-frontend.vercel.app
+        value: https://miba-ecommerce.vercel.app
 
 
