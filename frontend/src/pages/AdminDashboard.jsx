@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:5000/api/products";
+const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API = `${apiBaseUrl}/api/products`;
 
 export default function AdminDashboard() {
 	const [products, setProducts] = useState([]);

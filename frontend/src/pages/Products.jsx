@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
+const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function Products() {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ export default function Products() {
 	useEffect(() => {
 		async function load() {
 			try {
-				const res = await fetch("http://localhost:5000/api/products");
+				const res = await fetch(`${apiBaseUrl}/api/products`);
 				if (!res.ok) throw new Error(`Request failed: ${res.status}`);
 				const data = await res.json();
 				setProducts(data.products || []);
